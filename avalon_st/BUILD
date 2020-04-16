@@ -17,5 +17,5 @@ block(
         "avalon_st_monitor.sv",
         "avalon_st_agent.sv",
     ],
-    blocks = ":avalon_st_if"
+    blocks = [":avalon_st_if"]
 )
