@@ -21,7 +21,7 @@ block(
         "environment.sv",
         "base_test.sv",
         "top_tb.sv",
-    ]
+    ],
     blocks = [
         "//avalon_st:avalon_st_if",
         "//avalon_st:avalon_st",
