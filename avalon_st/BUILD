@@ -1,7 +1,7 @@
 load("@meru//:meru.bzl", "block")
 
 block(
-    name = "avalon_st_ifs",
+    name = "avalon_st_if",
     vlog_files = ["avalon_st_if.sv"],
 )
 
