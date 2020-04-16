@@ -1,4 +1,5 @@
 load("@meru//:meru.bzl", "block", "sim_test")
+package(default_visibility=["//visibility:public"])
 
 sim_test(
     name = "test",
