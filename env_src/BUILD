@@ -1,11 +1,27 @@
-load("@meru//:meru.bzl", "block", "sim_test")
+load("@meru//:meru.bzl", "block", "sim_test", "regression_test")
 package(default_visibility=["//visibility:public"])
 
 sim_test(
     name = "test",
     top = "top_tb",
-    top_file = "top_tb.sv",
-    blocks = [":env"]
+    vlog_top = "top_tb.sv",
+    blocks = [":env"],
+    defines = {
+        "SHIT": "",
+        "BUS_WIDTH": "128"
+    }
+)
+
+regression_test(
+    name = "full_test",
+    vlog_top = "top_tb.sv",
+    top = "top_tb",
+    blocks = [":env"],
+    defines = {
+        "PROJECT" : ["VALUE", "SHIT", None],
+        "ANOTHER" : ["NAME", "DAMN"],
+        "BUS_WIDTH" : ["128"],
+    }
 )
 
 block(
@@ -21,7 +37,6 @@ block(
         "virtual_sequence.sv",
         "environment.sv",
         "base_test.sv",
-        "top_tb.sv",
     ],
     blocks = [
         "//avalon_st:avalon_st_if",

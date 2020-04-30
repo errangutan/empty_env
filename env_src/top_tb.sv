@@ -69,7 +69,7 @@ module top_tb ();
 	  $dumpfile("dump.vcd");
       $dumpvars(0,top_tb);
       
-        // Start the test.
+       // Start the test.
       uvm_root::get().run_test("base_test");
     end
 endmodule
